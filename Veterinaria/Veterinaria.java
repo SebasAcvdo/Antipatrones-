@@ -10,9 +10,14 @@ public class Veterinaria {
     }
 
     public void ingresarAnimales(){
-        for(Animal animal : animals){
-            animal.registrarAnimal();
-        } 
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        try {
+            for(Animal animal : animals){
+                animal.registrarAnimal(scanner);
+            }
+        } finally {
+            
+        }
     }
     public void mostrarAnimales(){
         for(Animal animal : animals){

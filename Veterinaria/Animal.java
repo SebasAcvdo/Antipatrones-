@@ -3,17 +3,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public abstract class Animal {
-    
-public enum padecimientos {
-    GRIPE, FRACTURA, INFECCION, OTRO
-}
+
+    public enum Padecimiento {
+        GRIPE, FRACTURA, INFECCION, OTRO
+    }
 
     protected String nombre, colorPelaje, comidaFavorita;
-    protected padecimientos padecimiento;
-    Scanner scanner = new Scanner(System.in);
+    protected Padecimiento padecimiento;
 
-    public abstract void registrarAnimal();
-    public abstract padecimientos revisarAnimal();
+    public void registrarAnimal(java.util.Scanner scanner) {
+        // default implementation does nothing; subclasses can override
+    }
+
+    public Padecimiento revisarAnimal() {
+        return this.padecimiento;
+    }
+
     public abstract void tratarAnimal();
 
     Animal(String nombre, String colorPelaje, String comidaFavorita) {
@@ -34,7 +39,7 @@ public enum padecimientos {
 
     public void asignarPadecimientoAleatorio() {
         Random random = new Random();
-        padecimientos[] valores = padecimientos.values();
+        Padecimiento[] valores = Padecimiento.values();
         this.padecimiento = valores[random.nextInt(valores.length)];
     }
 

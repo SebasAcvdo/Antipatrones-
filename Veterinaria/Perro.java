@@ -7,27 +7,13 @@ public class Perro extends Animal {
     }
 
     @Override
-    public void registrarAnimal() {
+    public void registrarAnimal(java.util.Scanner scanner) {
         System.out.println("ingrese el nombre del perro:");
         nombre = scanner.nextLine();
         System.out.println("ingrese el color del pelaje:");
         colorPelaje = scanner.nextLine();
         System.out.println("ingrese la comida favorita:");
         comidaFavorita = scanner.nextLine();
-        scanner.close();
-    }
-
-    @Override
-    public padecimientos revisarAnimal() {
-        if(padecimiento == padecimientos.GRIPE) {
-            return this.padecimiento;
-        } else if (padecimiento == padecimientos.FRACTURA) {
-            return this.padecimiento;
-        } else if (padecimiento == padecimientos.INFECCION) {
-            return this.padecimiento;
-        } else {
-            return this.padecimiento;
-        }
     }
     @Override
     public void tratarAnimal() {
